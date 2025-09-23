@@ -1,0 +1,64 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000001f74c515800 .scope module, "tb_logicgates" "tb_logicgates" 2 3;
+ .timescale -9 -12;
+v000001f74c515b20_0 .var "a", 0 0;
+v000001f74c515bc0_0 .var "b", 0 0;
+v000001f74c55b840_0 .net "y_and", 0 0, L_000001f74c1e71d0;  1 drivers
+v000001f74c55b8e0_0 .net "y_not", 0 0, L_000001f74c1e9370;  1 drivers
+v000001f74c55b980_0 .net "y_or", 0 0, L_000001f74c1e8900;  1 drivers
+S_000001f74c515990 .scope module, "uut" "logicgates" 2 7, 3 3 0, S_000001f74c515800;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "y_and";
+    .port_info 3 /OUTPUT 1 "y_or";
+    .port_info 4 /OUTPUT 1 "y_not";
+L_000001f74c1e71d0 .functor AND 1, v000001f74c515b20_0, v000001f74c515bc0_0, C4<1>, C4<1>;
+L_000001f74c1e8900 .functor OR 1, v000001f74c515b20_0, v000001f74c515bc0_0, C4<0>, C4<0>;
+L_000001f74c1e9370 .functor NOT 1, v000001f74c515b20_0, C4<0>, C4<0>, C4<0>;
+v000001f74c1ea040_0 .net "a", 0 0, v000001f74c515b20_0;  1 drivers
+v000001f74c1e6bf0_0 .net "b", 0 0, v000001f74c515bc0_0;  1 drivers
+v000001f74c1ebee0_0 .net "y_and", 0 0, L_000001f74c1e71d0;  alias, 1 drivers
+v000001f74c1e92d0_0 .net "y_not", 0 0, L_000001f74c1e9370;  alias, 1 drivers
+v000001f74c1e8860_0 .net "y_or", 0 0, L_000001f74c1e8900;  alias, 1 drivers
+    .scope S_000001f74c515800;
+T_0 ;
+    %vpi_call 2 10 "$dumpfile", "logicgates.vcd" {0 0 0};
+    %vpi_call 2 11 "$dumpvars", 32'sb00000000000000000000000000000000, S_000001f74c515800 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001f74c515b20_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001f74c515bc0_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001f74c515b20_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001f74c515bc0_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001f74c515b20_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001f74c515bc0_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001f74c515b20_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001f74c515bc0_0, 0, 1;
+    %delay 10000, 0;
+    %vpi_call 2 18 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "tb_logicgates.v";
+    "logicgates.v";

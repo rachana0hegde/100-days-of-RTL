@@ -1,0 +1,46 @@
+$date
+	Tue Sep 23 17:42:03 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb_logicgates $end
+$var wire 1 ! y_or $end
+$var wire 1 " y_not $end
+$var wire 1 # y_and $end
+$var reg 1 $ a $end
+$var reg 1 % b $end
+$scope module uut $end
+$var wire 1 $ a $end
+$var wire 1 % b $end
+$var wire 1 # y_and $end
+$var wire 1 " y_not $end
+$var wire 1 ! y_or $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+0%
+0$
+0#
+1"
+0!
+$end
+#10000
+1!
+1%
+#20000
+0"
+0%
+1$
+#30000
+1#
+1%
+#40000
